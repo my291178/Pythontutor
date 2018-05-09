@@ -19,10 +19,9 @@ for i in range(q):
         else:
             dictionary[i] = 1
 # Подсчет и запись слов в словарь
-
 max_values = max(dictionary.values())
-# находим максимальное значение
 
+# находим максимальное значение в лексикографическом порядке
 for key in sorted(dictionary.keys()):
     # цикл по отсортированному по словам словарю
     if dictionary[key] == max_values:
