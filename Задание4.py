@@ -18,7 +18,7 @@ for i in range(q):
             dictionary[i] += 1
         else:
             dictionary[i] = 1
-# Подсчет слов в словаре
+# Подсчет и запись слов в словарь
 
 max_values = max(dictionary.values())
 # находим максимальное значение
