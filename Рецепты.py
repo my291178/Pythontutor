@@ -2,38 +2,19 @@
 Что можно приготовить из имеющихся продуктов.
 '''
 
+import json
+
+
+persons = int(input('Введите количество персон: '))
+
+
+with open("Recipes.json","r") as f:
+    recipes = json.loads(f.read())
 
 
 
-recipes = {
-    "Блины": {
-
-        "молоко": 500,
-        "яйца": 3,
-        "мука": 200,
-        "масло сливочное (или растительное)": 30,
-        "сахар": 2,
-        "соль": 0.5
-
-    },
-
-    "Яичница": {
-        "яйца": 2,
-        "масло сливочное (или растительное)": 10
-        }
-
-}
-
-fridge = {
-
-        "молоко": 600,
-        "яйца": 10,
-        "мука": 250,
-        "масло сливочное (или растительное)": 1000,
-        "сахар": 2000,
-        "соль": 200
-
-}
+with open("data.json","r") as f:
+    fridge = json.loads(f.read())
 
 result = []
 
@@ -41,7 +22,7 @@ for name, recipe in recipes.items():
 
     is_valid = True
     for i in recipe:
-        if not fridge[i] >= recipe[i]:
+        if not fridge[i] >= recipe[i]*persons:
             is_valid = False
             break
 
